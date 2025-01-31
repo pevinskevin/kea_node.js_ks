@@ -1,0 +1,43 @@
+JavaScript benytter sig af "type coercion" 
+
+"Type coercion in JavaScript is the automatic conversion of values from one data type to another. This happens when JavaScript needs a value of a certain type but gets a different one.
+
+There are two main types:
+
+Implicit Coercion → JavaScript automatically converts a value.
+Explicit Coercion → The developer manually converts a value using functions like Number(), String(), or Boolean()." 
+
+
+Type Coercion in JavaScript
+Type coercion in JavaScript is the automatic conversion of values from one data type to another. This happens when JavaScript needs a value of a certain type but gets a different one.
+
+🔹 Implicit Coercion (Automatic Conversion)
+JavaScript tries to convert data types when you perform operations between different types.
+
+1️⃣ String Coercion - When a number or boolean is used with a string, JavaScript converts it into a string:
+console.log("Hello " + 5);      // "Hello 5"
+console.log("5" + 3);           // "53" (not 8, because + triggers string coercion)
+console.log("The answer is " + true); // "The answer is true"
+💡 Rule: If you use + with a string and another type, everything is converted to a string.
+
+2️⃣ Number Coercion - JavaScript converts strings and booleans to numbers in mathematical operations:
+console.log("5" - 3);    // 2   (string "5" becomes number 5)
+console.log("10" * 2);   // 20  (string "10" becomes number 10)
+console.log("10" / "2"); // 5   (both strings are converted to numbers)
+console.log(true + 1);   // 2   (true → 1, false → 0)
+💡 Rule: -, *, /, and % prefer numbers, so they convert non-numbers.
+
+
+
+3️⃣ Convert to a Boolean - JavaScript converts values to true or false in logical expressions:
+console.log(Boolean(0));       // false
+console.log(Boolean(1));       // true
+console.log(Boolean("Hello")); // true (non-empty string)
+console.log(Boolean(""));      // false (empty string)
+console.log(Boolean(null));    // false
+console.log(Boolean(undefined)); // false
+💡 Rule: Values like 0, "", null, undefined, and NaN are falsy, while everything else is truthy.
+
+_____
+
+
