@@ -1,0 +1,16 @@
+Examples: maven, gradle, ant, make, nuget
+
+
+Java            Node.js
+____            _______
+//Package manager
+maven           npm, pnpm, yarn
+
+//Entry point
+pom.xml         package.json
+contains
+
+meta            meta
+dependencies    dependencies
+life cycles     scripts
+
