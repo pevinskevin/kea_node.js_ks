@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+<html lang="en">
+	<head>
+		<!-- 3. external CSS file -->
+		<link rel="stylesheet" href="./frontpage/frontpage.css" />
+
+		<!-- 2. CSS in style tag -->
+		<style>
+			#front-page-header {
+				color: purple;
+			}
+			.banana {
+				background-color: grey;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 id="front-page-header">Frontpage</h1>
+
+		<!-- Inline css -->
+		<h2 style="color: green">Welcome Users</h2>
+
+		<h3 class="banana"></h3>
+
+		<script src="./frontpage/frontpage.js"></script>
+
+		<!-- Task in HTML: allow users to be redirected to the party page -->
+         <a href="/partypage">Click here to go to party page</a> 
+		 <!-- WHy does referring to endpoint work? -->
+
+		 <script>
+			// task: after 3 seconds dynamically/programmatically go to the partypage.
+			// Two possible solutions
+			// window.location.href = "/partypage";
+			// OR
+			// window.location.replace("/partypage");
+		 </script>
+
+
+		<script>
+			// assigment: fetch the visitor count and show it on the page.
+			fetch('/visitorcount')
+				.then((response) => response.json())
+				.then((result) => {
+					const visitorCountDiv = document.getElementById('visitorCount');
+					console.log(visitorCountDiv);
+					visitorCountDiv.textContent = result.data;
+				});
+		</script>
+	</body>
+</html>

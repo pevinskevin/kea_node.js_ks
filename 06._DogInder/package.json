@@ -1,0 +1,31 @@
+{
+  "name": "doginder",
+  "version": "1.0.0",
+  "description": "Tinder for indian dogs",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lsall": "ls -al",
+    "setupproject": "mkdir image",
+    "dev": "cross-env PORT=8080 nodemon app.js",
+    "prod": "cross-env PORT=80 ENVIRONMENT=PROD nodemcdon app.js"
+  },
+  "keywords": [
+    "tinder",
+    "dog",
+    "dogs",
+    "indian",
+    "match-making",
+    "love"
+  ],
+  "author": "Me",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "@faker-js/faker": "^9.6.0",
+    "express": "^4.21.2"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3"
+  }
+}

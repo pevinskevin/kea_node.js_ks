@@ -1,24 +1,46 @@
-const express = require('express');
+'use strict';
 
+const express = require('express');
 const app = express();
 
+const fingerbone = { name: 'phalange', id: '1' };
 
+const fingerboneArray = [fingerbone];
 
-app.get("/", (req, res) =>{
-    res.send({ data: "This is the root route"});
+app.use(express.json());
+
+app.get('/fingerbones', (req, res) => {
+	res.send(fingerboneArray);
 });
 
-app.get("/blablabla", (req, res) =>{
-    res.send({ data: "This is the blablabla route"});
+app.get('/fingerbones/{id}', (req, res) => {
+	res.send(fingerboneArray[id - 1]);
 });
 
+app.post('/fingerbones', (req, res) => {
+	res.send('Fingerbone created');
+});
 
-app.listen(8080);
+app.put('/fingerbones/{id}', (req, res) => {
+	res.send('Hello, world!');
+});
 
+app.patch('/fingerbones/{id}', (req, res) => {
+	res.send('');
+});
 
-// Instead of using "{}"" to get/set path variables, js uses ":"
-app.get("/favoritenumber/:favoritenumber", (req, res) =>{
-    console.log(req)
-    res.send({data: `Your favorite number is: ${req.params.favoritenumber}`});
-})
+app.delete('/fingerbones/{id}', (req, res) => {
+	res.send('Fingerbone with {id} deleted.');
+});
 
+app.get('/proxy', (req, res) => {
+	fetch('https://www.google.com')
+		.then((response) => response.text())
+		.then((data) => {
+			res.send(data);
+		});
+});
+
+app.listen(8081, () => {
+	console.log('Server is running.');
+});

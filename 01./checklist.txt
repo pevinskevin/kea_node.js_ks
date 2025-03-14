@@ -1,0 +1,16 @@
+Can work with Git in the terminal. - check.
+
+Understand and work with data types in Javascript. - check.
+
+Can explain what Node.js is and how to run files with it. - check.
+
+Knows the existing data types in Javascript and can work with them. - check.
+
+Understands type coercion and strategies to avoid it. - check.
+
+Can design a REST API. - check.
+
+Knows the three REST conventions we follow: - not sure. 
+1. Using the right HTTP verb, 
+2. Ordering, 
+3. Naming (noun, plural) that maps to collections in your system.

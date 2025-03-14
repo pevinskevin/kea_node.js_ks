@@ -1,0 +1,49 @@
+- Understand scoping in Javascript,  and know to always use const if you can get away with it otherwise let. ✅
+
+    There are three kinds of scope in Javascript.
+    1. Global scope
+    2. Function scope
+    3. block scope.
+
+    Global scope means that a variable has been declared outside of any functions and code blocks.
+    It is thus globally accessible in the script. This applies to both var, let and const.
+
+    Function scope means that a variable is accessible within a function.
+    Only var falls under "function scope" meaning that eg:
+    You declare it within a if-else block nested in a function, the var
+    variable will still be available outside of the if-else block since it has function scope.
+    It won't be accessible outside of the function however. 
+
+    Block scope means that it's only available within the code block that it has been declared in.
+    This only applies to let and const. A let and const variabl declared in a function, will be available to any subsequent loops, functions etc. and their variables nested in the parent function.
+    The variables will not be available outside of the block scope. 
+
+
+- Understand advanced things about functions in Javascript.
+    aklsd
+
+
+- Can write callback functions with different syntax.
+    asf æakdjf lka
+    ælj 
+
+
+- Understands the function of NPM and can compare it with other package managers.
+    Used to install and manage packages i.e. a projects dependencies. 
+    asf
+
+
+- Understands the different purposes of package.json and can set it up by hand.✅
+    Very similar to Maven's poml file. 
+
+
+- Can create a server with Express from memory.
+    asdf
+
+
+- Understands how to send data with GET requests over HTTP and knows how to do it in Express.
+    adadf
+
+
+- Understands node_modules.
+    adsf

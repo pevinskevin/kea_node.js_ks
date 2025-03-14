@@ -1,0 +1,21 @@
+nav {
+	height: 10 vh;
+}
+
+main {
+	flex: 1;
+}
+
+body {
+	min-height: 95vh;
+	display: flex;
+	flex-direction: column;
+}
+
+footer {
+	height: 5 vh;
+}
+
+#dog-matches-image {
+	max-height: 50vh;
+}
