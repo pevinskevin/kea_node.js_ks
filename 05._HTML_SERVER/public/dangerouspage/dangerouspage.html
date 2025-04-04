@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>Dangerous Page</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="/styles.css" />
+		<title>Dangerous page</title>
+	</head>
+	<body>
+		<h1>DANGER!!!</h1>
+
+		<div id="content"></div>
+
+		<script>
+			const contentDiv = document.getElementById('content');
+
+            contentDiv.innerHTML = `<img src="x" onerror="alert('XSS')/>"`
+
+			function sanitizeXSS(string) {
+				return string
+					.replaceAll('&', '&amp;')
+					.replaceAll('<', '&lt;')
+					.replaceAll('>', '&gt;')
+					.replaceAll('"', '&quot;')
+					.replaceAll("'", '&#39;')
+					.replaceAll('`', '&#x60;')
+					.replaceAll('/', '&#x2F;');
+			}
+		</script>
+	</body>
+</html>

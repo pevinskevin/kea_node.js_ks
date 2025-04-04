@@ -38,6 +38,10 @@ app.get('/redirect', (req, res) => {
 	res.redirect('/favoritethings');
 });
 
+app.get('/dangerouspage', (req, res) => {
+	res.sendFile(path.resolve('./public/dangerouspage/dangerouspage.html'));
+});
+
 app.listen(port, (req, res) => {
 	console.log(`Server is running on ${port}`);
 });

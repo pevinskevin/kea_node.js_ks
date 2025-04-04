@@ -1,4 +1,6 @@
 <script>
+	import FirstMessage from "./FirstMessage.svelte";
+
     const messages = [];
 
     let messageInput = "";
@@ -15,3 +17,5 @@
 <input bind:value={messageInput} type="text">
 
 <button>Submit message</button>
+
+<FirstMessage theFirstMessage="test message"></FirstMessage>
