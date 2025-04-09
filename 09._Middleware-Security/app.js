@@ -1,17 +1,10 @@
 import express from 'express';
 const app = express();
 
-import middlewareRouter from './routers/middlewareRouter.js';
-app.use(middlewareRouter);
-
-import authRouter from './routers/authRouter.js';
-app.use(authRouter);
-
 function greetLoggedInUsers(req, res, next) {
 	console.log('Welcome, logged in user.');
 	next();
 }
-
 app.use('/auth', greetLoggedInUsers);
 
 // app.get('*', (req, res) => {
@@ -33,15 +26,30 @@ const limiter = rateLimit({
 
 // Apply the rate limiting middleware to all requests.
 app.use(limiter);
-
 const authLimiter = rateLimit({
 	windowMs: 15 * 60 * 1000, // 15 minutes
-    limit: 5,
-    standardHeaders: 'draft-8',
-    legacyHeaders: false,
+	limit: 5,
+	standardHeaders: 'draft-8',
+	legacyHeaders: false,
 });
+app.use('/auth', authLimiter);
 
-app.use("/auth", authLimiter)
+import session from 'express-session';
+app.use(
+	session({
+		secret: 'keyboard cat',
+		resave: false,
+		saveUninitialized: true,
+		cookie: { secure: false },
+	})
+);
+
+import middlewareRouter from './routers/middlewareRouter.js';
+app.use(middlewareRouter);
+import sessionRouter from './routers/sessionRouter.js';
+app.use(sessionRouter);
+import authRouter from './routers/authRouter.js';
+app.use(authRouter);
 
 app.all('/{*splat}', (req, res) => {
 	if (req.method == 'GET') {
