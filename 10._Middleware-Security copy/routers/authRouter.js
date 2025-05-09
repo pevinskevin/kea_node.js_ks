@@ -20,6 +20,7 @@ router.get('/auth/admin', isAdmin, (req, res) => {
 });
 
 
+
 router.get('/user', (req, res) => {
 	res.send({ message: "You're just a user, haha." });
 });

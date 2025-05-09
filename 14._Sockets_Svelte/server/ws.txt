@@ -1,0 +1,3 @@
+Websocket is full duplex - duplex meaning it can send data/messages both ways simultaneously. --> Phone
+Half duplex means it can communicates both ways, but only one direction at a time so to speak. --> Walkie-talkie.
+
